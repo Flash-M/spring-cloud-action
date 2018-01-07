@@ -1,0 +1,4 @@
+top\flashm\springcloud\controller\UserController.class
+top\flashm\springcloud\repository\UserRepository.class
+top\flashm\springcloud\ProviderUserApplication.class
+top\flashm\springcloud\entity\User.class

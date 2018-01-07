@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: microservice-discovery-eureka-server
+security:
+  user:
+    name: root
+    password: root
+  basic:
+    enabled: false
+    
+server:
+  port: 8761
+eureka:
+  #instance:
+    #hostname: peer1
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      # defaultZone: http://localhost:1111/eureka/ # 指定服务注册中心
+      # 格式是 : http://user:password@EurekaHost:EurekaPort/eureka/
+      dafaultZone: http://localhost:8761/eureka
+  

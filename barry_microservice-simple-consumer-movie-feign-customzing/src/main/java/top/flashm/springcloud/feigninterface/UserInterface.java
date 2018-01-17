@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import feign.Param;
 import feign.RequestLine;
-import top.flashm.springcloud.config.FeignConfiguration;
+import top.flashm.config.FeignConfiguration;
 import top.flashm.springcloud.entity.User;
 import top.flashm.springcloud.feigninterface.UserInterface.UserFallback;
 

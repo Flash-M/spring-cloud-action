@@ -1,4 +1,4 @@
-package top.flashm.springcloud.config;
+package top.flashm.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -15,10 +15,10 @@ import com.netflix.loadbalancer.RandomRule;
 @Configuration
 public class RibbonConfiguration {
 	
-	/*@Bean
+	@Bean
 	public IRule ribbonRule() {
 		//负载均衡规则改成随机
 		return new RandomRule();
-	}*/
+	}
 
 }

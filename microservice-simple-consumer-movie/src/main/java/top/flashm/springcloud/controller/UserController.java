@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
 import top.flashm.springcloud.entity.User;
 
 @RestController
@@ -32,6 +34,7 @@ public class UserController {
 	
 	public static final Logger logger = LoggerFactory.getLogger(User.class);
 	
+	@HystrixCommand(fallbackMethod="findByIdFallback")
 	@GetMapping("{id}")
 	public User findById(@PathVariable Long id){
 		//restTemplate实际上是一个Riboon的客户端，当Ribbon与Eureka配合使用时，会自动将虚拟主机名映射成微服务的网络地址
@@ -39,6 +42,13 @@ public class UserController {
 	
 		//使用feign进行声明式restAPI调用
 		//return userInterface.findById(id);
+	}
+	
+	public User findByIdFallback(Long id){
+		User user = new User();
+	    user.setId(-1L);
+	    user.setName("默认用户");
+	    return user;
 	}
 	
 	@GetMapping("serviceInstances")

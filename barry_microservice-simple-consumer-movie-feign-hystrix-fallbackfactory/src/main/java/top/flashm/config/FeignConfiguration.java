@@ -11,16 +11,16 @@ import feign.Contract;
  * @author Barry
  *
  */
-@Configuration
+/*@Configuration
 public class FeignConfiguration {
 	
-	/**
+	*//**
 	 * 使用feign原始契约，这样可以使用feign原生的注解
 	 * @return
-	 */
+	 *//*
 	@Bean
 	public Contract feignContract(){
 		return new feign.Contract.Default();
 	}
 
-}
+}*/

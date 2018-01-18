@@ -4,25 +4,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import feign.Param;
-import feign.RequestLine;
 import feign.hystrix.FallbackFactory;
-import top.flashm.config.FeignConfiguration;
 import top.flashm.springcloud.entity.User;
 import top.flashm.springcloud.feigninterface.UserInterface.UserFallbackFactory;
 
-@FeignClient(name = "microservice-provider-user", configuration = FeignConfiguration.class, fallbackFactory = UserFallbackFactory.class)
+@FeignClient(name = "microservice-provider-user", fallbackFactory = UserFallbackFactory.class)
 public interface UserInterface {
-	// @RequestMapping(value = "/{id}", method = RequestMethod.GET)
 
-	/**
-	 * 使用feign原生注解进行声明式调用
-	 * 
-	 * @param id
-	 * @return
-	 */
-	@RequestLine(value = "GET /{id}")
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public User findById(@Param("id") Long id);
 
 	@Component

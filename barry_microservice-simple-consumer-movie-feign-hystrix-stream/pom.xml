@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>top.flashm</groupId>
-	<artifactId>microservice-simple-consumer-movie</artifactId>
+	<artifactId>microservice-simple-consumer-movie-feign-hystrix-stream</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>microservice-simple-consumer-movie</name>
-	<description>消费者微服务（电影微服务）</description>
+	<name>microservice-simple-consumer-movie-feign-hystrix-stream</name>
+	<description>消费者微服务（电影微服务）feign-hystrix实现监控</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
